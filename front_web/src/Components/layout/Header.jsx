@@ -3,7 +3,7 @@ import imglogin from "../../img/usuario-do-circulo.png";
 
 export default function Header() {
   return (
-    <div className="conteudo">
+    <div className="conteudoHeader">
       <nav>
         <ul className="menu">
           <li className="nav-item">

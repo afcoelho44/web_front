@@ -1,0 +1,58 @@
+
+.AnswerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tituloAnswer{
+    font-size:47px;
+    font-weight: bold;
+    color: #00712D;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.subtituloAnswer{
+    font-size: 27px;
+    font-weight: bold;
+    color: #00712D;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.recomendacao{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 250px;
+    width: 500px;
+    background-color: #B0EDBD;
+    border-radius: 20px;
+}
+h3{
+    color: #00712D;
+}
+p{
+    color: #00712D;
+    background-color: #C8FED4;
+    width: 150px;
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.imagemlivro{
+    width: auto;
+    height: 250px;
+    border-radius: 20px;
+}
+.dadosLivro{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

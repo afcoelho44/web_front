@@ -1,10 +1,10 @@
-.conteudo{
+.conteudoHeader{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.titulo{
+.tituloHome{
     font-size: 37px;
     font-weight: bold;
     color: #00712D;
@@ -12,7 +12,7 @@
     margin-top: 50px;
     margin-bottom: 10px;
 }
-.subtitulo{
+.subtituloHome{
     font-size: 33px;
     font-weight: bold;
     color: #00712D;
@@ -20,7 +20,7 @@
     margin-top: 5px;
     margin-bottom: 50px;
 }
-.botao{
+.botaoHome{
     background-color: #82DA95;
     color: #fff;
     font-size: 27px;
