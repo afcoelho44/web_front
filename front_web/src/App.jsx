@@ -4,8 +4,9 @@ import Home from "./Pages/Home";
 import AddUser from "./Pages/users/AddUser";
 import IndexBooks from "./Pages/books/IndexBooks";
 import AddBook from "./Pages/books/AddBook";
-// import "./App.css";
+import "./App.css";
 import Header from "./Components/layout/Header";
+import Test from "./Pages/Test";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +20,7 @@ function App() {
           <Route path="/users/add" element={<AddUser />} />
           <Route path="/books" element={<IndexBooks />} />
           <Route path="/books/add" element={<AddBook />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </div>

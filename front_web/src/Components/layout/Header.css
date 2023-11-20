@@ -2,7 +2,11 @@
     margin: 0;
     padding:0;
 }
-
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 a{
     color: #fff;
     text-decoration: none;
