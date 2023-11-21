@@ -20,7 +20,7 @@ export default function Header() {
         <a href="/" className="logo">
           IWE
         </a>
-        <a href="/users/add" className="login">
+        <a href="/users/login" className="login">
           <img src={imglogin}></img>
         </a>
       </nav>

@@ -1,0 +1,46 @@
+.conteudoLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  background-color: #82DA95;
+  border-radius: 20px;
+}
+.conteudoLogin h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00712D;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.conteudoLogin label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00712D;
+  margin-bottom: 20px;
+  margin-right:5px ;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.conteudoLogin input {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid #00712D;
+  background-color: #C8FED4;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  padding-left: 10px;
+}
+.conteudoLogin button {
+  border-radius: 60px;
+  border: 2px solid #00712D;
+  color: #00712D;
+  background-color: #C8FED4;
+  margin-bottom: 20px;
+}

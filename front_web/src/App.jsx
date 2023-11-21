@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import AddUser from "./Pages/users/AddUser";
+import Login from "./Pages/users/Login";
 import IndexBooks from "./Pages/books/IndexBooks";
 import AddBook from "./Pages/books/AddBook";
 import "./App.css";
@@ -18,7 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/users/add" element={<AddUser />} />
+          <Route path="/users/login" element={<Login />} />
           <Route path="/books" element={<IndexBooks />} />
           <Route path="/books/add" element={<AddBook />} />
           <Route path="/test" element={<Test />} />
