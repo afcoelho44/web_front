@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'; //adicionar estado a um comp
 import { listarTodasPerguntas } from  "../Api/ApiService"; 
 
 import '../Pages/Test.css';
+import Questions from '../Components/Questions';
 
 export default function Test() {
   const [perguntas, setPerguntas] = useState([]);
@@ -25,22 +26,8 @@ export default function Test() {
   console.log('Perguntas no estado:', perguntas); // Verifique se as perguntas estão sendo armazenadas no estado
 
   return (
-    <div className="conteudoTest">
-      <h1 className="tituloTest">Pergunta n</h1>
-      {/* Verificando se há perguntas antes de renderizar */}
-      {perguntas.length > 0 ? (
-        // Mapeando sobre as perguntas para exibi-las
-        perguntas.map((pergunta, index) => (
-          <div key={index} className="pergunta">
-            <p className="conteudoPergunta">{pergunta.conteudoPergunta}</p>
-          </div>
-        ))
-      ) : (
-        // Caso não haja perguntas, exiba uma mensagem ou lógica apropriada
-        <p>Não há perguntas disponíveis no momento.</p>
-      )}
-      <div className="respostas">
-      </div>
+    <div >
+      <Questions/>
     </div>
   );
 }
