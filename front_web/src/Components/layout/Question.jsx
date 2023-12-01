@@ -1,18 +1,19 @@
 import React from "react";
 import Card from "./Card";
+import Answers from "../Answers";
 
-const Questions = ({ pergunta })=> { 
+
+const Question = ({ pergunta })=> { 
     console.log(pergunta);
     return (
         <Card id={ pergunta.idPergunta}>
-            <h1 className="tituloTest">Pergunta n</h1>
+            <h1 className="tituloTest">Sobre você, me diga: </h1>
             <div className="pergunta">
             <p className="conteudoPergunta">{ pergunta.conteudoPergunta}</p>
             </div>
-            
+            <Answers idPergunta={pergunta.idPergunta} />
        </Card> 
     );
 }
 
-export default Questions;
-
+export default Question;

@@ -38,16 +38,17 @@
     padding-bottom: 50px;
     border-radius: 25px;
 }
-.respostas{
+.resposta{
     color: #00712D;
+    display: flex;
+    justify-items: flex-start;
+    margin-left: 50px;
 }
 .alternativa{
     appearance: none;
-
     border-radius: 50%;
     width: 16px;
     height: 16px;
-  
     border: 2px solid #00712D;
     background-color: #B0EDBD;
     transition: 0.2s all linear;
