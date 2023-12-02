@@ -1,28 +1,42 @@
-import React from "react";
+import React, { useState }from "react";
 import Answer from "./layout/Answer";
 import { consultarRespostasPorIdPergunta } from "../Api/ApiService";
 
 
 
-export default function Answers(idPergunta) { 
+export default function Answers(props) { 
     const [respostas, setRespostas] = React.useState([]);
-    
+    let data = props; // Assign the object directly to data
+    let id = data.idPergunta; // Access the id property of the object
     React.useEffect(() => {
-        let data = idPergunta; // Assign the object directly to data
-        let id = data.idPergunta; // Access the id property of the object
-        console.log(data);
-        console.log(id);
+       
         consultarRespostasPorIdPergunta(id).then((response) => {
-           setRespostas(response.data);
+            setRespostas(response.data);
         }).catch((error) => {
             console.log(error);
         });
-        console.log(respostas);
     }, []);
-    
+
+    const [respostaSelecionada, setRespostaSelecionada] = useState(0);
+
+    function isChecked(idResposta) {
+        if (respostaSelecionada == idResposta) {
+            // console.log(respostaSelecionada);
+            let pergunta_resposta = {
+                idPergunta: id,
+                idResposta: idResposta
+            }
+            props.addRespostasAtuais(pergunta_resposta);
+            return true;
+        }
+        return false;
+    }
+
+
+
     return (
-        <>
-        {Array.isArray(respostas) && respostas.map((resposta) => <Answer resposta={resposta} key={resposta.idResposta} />)}
-        </>
+        <div className="resposta-container">
+            {respostas.map((resposta) => <Answer resposta={resposta} key={resposta.idResposta} idPergunta={id} isChecked={isChecked} setRespostaSelecionada={ setRespostaSelecionada} />)}
+        </div>
     );
 }

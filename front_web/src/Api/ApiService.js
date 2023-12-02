@@ -47,6 +47,8 @@ export const atualizarLivro = (idLivro, livro) =>
 export const listarTodasPerguntas = () => api.get(`/api/perguntas`);
 
 //(----------------------Respostas------------------------)
+export const consultarRespostasPorId = (idResposta) =>
+  api.get(`/api/respostas/buscar/${idResposta}`);
 
 export const consultarRespostasPorIdPergunta = (idPergunta) =>
   api.get(`/api/respostas/pergunta/${idPergunta}`);

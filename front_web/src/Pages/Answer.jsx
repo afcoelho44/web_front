@@ -1,12 +1,16 @@
+import React from "react";
 import "../Pages/Answer.css";
 import imagem from "../img/capaLivro.jpg";
+import { useParams } from "react-router-dom";
 
 export default function Answer() {
+  const category = useParams();
+  console.log(category.data);
   return (
     <div className="conteudoAnswer">
       <div className="AnswerText">
         <h2 className="subtituloAnswer">Você é um sujeito</h2>
-        <h1 className="tituloAnswer">Romântico</h1>
+        <h1 className="tituloAnswer">Romantico</h1>
         <h2 className="subtituloAnswer">
           Essas são as nossas sujestões para você!
         </h2>

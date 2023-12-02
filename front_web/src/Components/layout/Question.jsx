@@ -3,15 +3,14 @@ import Card from "./Card";
 import Answers from "../Answers";
 
 
-const Question = ({ pergunta })=> { 
-    console.log(pergunta);
+const Question = (props)=> { 
     return (
-        <Card id={ pergunta.idPergunta}>
+        <Card id={ props.pergunta.idPergunta}>
             <h1 className="tituloTest">Sobre você, me diga: </h1>
             <div className="pergunta">
-            <p className="conteudoPergunta">{ pergunta.conteudoPergunta}</p>
+            <p className="conteudoPergunta">{ props.pergunta.conteudoPergunta}</p>
             </div>
-            <Answers idPergunta={pergunta.idPergunta} />
+            <Answers idPergunta={props.pergunta.idPergunta} addRespostasAtuais={ props.addRespostasAtuais} />
        </Card> 
     );
 }

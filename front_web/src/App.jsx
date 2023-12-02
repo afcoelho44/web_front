@@ -22,7 +22,7 @@ function App() {
           <Route path="/books" element={<IndexBooks />} />
           <Route path="/books/add" element={<AddBook />} />
           <Route path="/test" element={<Test />} />
-          <Route path="/answer" element={<Answer />} />
+          <Route path="/answer/:category" element={<Answer />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -3,11 +3,15 @@ import { listarTodasPerguntas } from  "../Api/ApiService";
 
 import '../Pages/Test.css';
 import Questions from '../Components/Questions';
+import { AnswerProvider } from '../Providers/AnswerContext';
 
 export default function Test() {
   return (
     <div >
-      <Questions/>
+      <AnswerProvider>
+        <Questions/>
+      </AnswerProvider>
+      
     </div>
   );
 }
