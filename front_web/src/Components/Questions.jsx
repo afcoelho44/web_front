@@ -34,6 +34,7 @@ export default function Questions() {
     async function handleSubmit(event) { 
         event.preventDefault();
         let aux = Array.from(respostasAtuais);
+        console.log(aux);
         setRespostasSelecionadas(aux);
         if (respostasSelecionadas.length !== 0) {
             let auxRespostas = await returnAnswer();
@@ -44,19 +45,10 @@ export default function Questions() {
             navigate(`/answer/${categoria}`);
         }
     }
-
     async function returnAnswer() { 
         let arrayRespostas = [];
-        for (const pergunta_resposta of respostasSelecionadas) {
-            let respostaAux = (await consultarRespostasPorId(pergunta_resposta.idResposta.idResposta)).data;
-            arrayRespostas.push(respostaAux);
-        }
-        return arrayRespostas;
-    }
-    function returnAnswer() { 
-        let arrayRespostas = [];
         respostasSelecionadas.forEach(async pergunta_resposta => {
-            let respostaAux = (await consultarRespostasPorId(pergunta_resposta.idResposta.idResposta)).data;
+            let respostaAux = (await consultarRespostasPorId(pergunta_resposta[1].idResposta)).data;
             
             arrayRespostas.push(respostaAux);
         });
