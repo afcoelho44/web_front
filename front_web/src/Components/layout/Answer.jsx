@@ -11,7 +11,7 @@ const Answer = (props) => {
                 value={props.resposta.idResposta}
                 checked={ props.isChecked(props.resposta.idResposta) }
                 onChange={(event) => {
-                    props.setRespostaSelecionada(event.target.value);
+                    props.alterarRespostaSelecionada(event.target.value);
                 }}
             />
             {props.resposta.conteudo}

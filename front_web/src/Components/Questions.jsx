@@ -20,28 +20,17 @@ export default function Questions() {
         });
     }, []);
 
+    let aux = respostasAtuais;
     function addRespostasAtuais(pergunta_resposta) { 
-        let aux = respostasAtuais;
         if (respostasAtuais.get(pergunta_resposta.idPergunta)) { 
             respostasAtuais.delete(pergunta_resposta.idPergunta);
             aux.set(pergunta_resposta.idPergunta, pergunta_resposta);
-            setrespostasAtuais(aux);
         } else {
             aux.set(pergunta_resposta.idPergunta, pergunta_resposta);
-            setrespostasAtuais(aux);
+            
         }
     }
 
-    async function handleSubmit(event) { 
-        event.preventDefault();
-        let aux = Array.from(respostasAtuais);
-        setRespostasSelecionadas(aux);
-        if (respostasSelecionadas.length !== 0) {
-            let auxRespostas = await returnAnswer();
-            const categoria = (await processarRespostas(auxRespostas)).data;
-            navigate(`/answer/${categoria}`);
-        }
-    }
     async function returnAnswer() { 
         let arrayRespostas = [];
         respostasSelecionadas.forEach(async pergunta_resposta => {
@@ -50,6 +39,26 @@ export default function Questions() {
         });
         setRespostas(arrayRespostas);
         return respostas;
+    }
+    async function processarRespostas() {
+        setrespostasAtuais(aux);
+        let aux1 = Array.from(respostasAtuais);
+        setRespostasSelecionadas(aux1);
+        if (respostasSelecionadas.length !== 0) {
+            let auxRespostas = await returnAnswer();
+            const categoria = (await processarRespostas(auxRespostas)).json();
+            return categoria;   
+        }
+    }
+    function handleSubmit(event) { 
+        event.preventDefault();
+        const categoria = processarRespostas();
+        if (categoria) {
+            console.log("tem categoria");
+            navigate(`/answer/${categoria}`);
+        } else {
+            console.log("não tem categoria");
+        }        
     }
 
     return (

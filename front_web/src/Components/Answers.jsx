@@ -9,7 +9,6 @@ export default function Answers(props) {
     let data = props; // Assign the object directly to data
     let id = data.idPergunta; // Access the id property of the object
     React.useEffect(() => {
-       
         consultarRespostasPorIdPergunta(id).then((response) => {
             setRespostas(response.data);
         }).catch((error) => {
@@ -19,6 +18,9 @@ export default function Answers(props) {
 
     const [respostaSelecionada, setRespostaSelecionada] = useState(0);
 
+    function alterarRespostaSelecionada(idResposta) {
+        setRespostaSelecionada(idResposta);
+    }
     function isChecked(idResposta) {
         if (respostaSelecionada == idResposta) {
             // console.log(respostaSelecionada);
@@ -36,7 +38,7 @@ export default function Answers(props) {
 
     return (
         <div className="resposta-container">
-            {respostas.map((resposta) => <Answer resposta={resposta} key={resposta.idResposta} idPergunta={id} isChecked={isChecked} setRespostaSelecionada={ setRespostaSelecionada} />)}
+            {respostas.map((resposta) => <Answer resposta={resposta} key={resposta.idResposta} idPergunta={id} isChecked={isChecked} alterarRespostaSelecionada={ alterarRespostaSelecionada} />)}
         </div>
     );
 }
