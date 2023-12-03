@@ -9,6 +9,7 @@ export default function Questions() {
 
     const navigate = useNavigate(); 
     const [perguntas, setPerguntas] = React.useState([]);
+    const [respostas, setRespostas] = React.useState([]);
     const { respostasAtuais, setrespostasAtuais } = React.useContext(AnswerContext);
     const {respostasSelecionadas, setRespostasSelecionadas} = React.useContext(AnswerContext);
     React.useEffect(() => {
@@ -34,14 +35,10 @@ export default function Questions() {
     async function handleSubmit(event) { 
         event.preventDefault();
         let aux = Array.from(respostasAtuais);
-        console.log(aux);
         setRespostasSelecionadas(aux);
         if (respostasSelecionadas.length !== 0) {
             let auxRespostas = await returnAnswer();
-            let json = auxRespostas.map(resposta => ({ 'idResposta': resposta.idResposta, 'descricao': resposta.descricao, 'categoria': resposta.categoria.idCategoria, 'pergunta': resposta.idPergunta}));
-            console.log(json);
-            const categoria = (await processarRespostas(json)).data;
-            console.log(categoria);
+            const categoria = (await processarRespostas(auxRespostas)).data;
             navigate(`/answer/${categoria}`);
         }
     }
@@ -49,10 +46,10 @@ export default function Questions() {
         let arrayRespostas = [];
         respostasSelecionadas.forEach(async pergunta_resposta => {
             let respostaAux = (await consultarRespostasPorId(pergunta_resposta[1].idResposta)).data;
-            
             arrayRespostas.push(respostaAux);
         });
-        return arrayRespostas;
+        setRespostas(arrayRespostas);
+        return respostas;
     }
 
     return (
