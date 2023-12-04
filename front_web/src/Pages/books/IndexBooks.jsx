@@ -1,6 +1,7 @@
 import React from 'react';
 import { listarTodosLivros } from '../../Api/ApiService';
 import Book from '../../Components/layout/Book';
+import './IndexBooks.css';
 export default function IndexBooks() {
 
   const [livros, setLivros] = React.useState([]);
@@ -20,7 +21,7 @@ export default function IndexBooks() {
   }
 
   return (
-    <div>
+    <div className='container'>
       {livros.map((livro) => {
         return (<Book key={ livro.idLivro} livro={livro}></Book>);
       })}

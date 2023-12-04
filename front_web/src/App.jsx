@@ -8,6 +8,7 @@ import "./App.css";
 import Header from "./Components/layout/Header";
 import Test from "./Pages/Test";
 import Answer from "./Pages/Answer";
+import UsersRegister from './Pages/users/UsersRegister';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users/login" element={<Login />} />
+          <Route path="/users/register" element={<UsersRegister />} />
           <Route path="/books" element={<IndexBooks />} />
           <Route path="/books/add" element={<AddBook />} />
           <Route path="/test" element={<Test />} />

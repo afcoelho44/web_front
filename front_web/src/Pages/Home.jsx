@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <div className="conteudoHome">
       <h1 className="tituloHome">
-        Cansou da sua prateleira? Siga uma das nossas recomendações!
+        Cansou da sua prateleira de livros? Siga uma das
+        nossas recomendações!
       </h1>
       <h2 className="subtituloHome">É só fazer o teste</h2>
       <button className="botaoHome" onClick={handleClick}>

@@ -32,6 +32,7 @@ export default function Login() {
           Entrar
         </button>
       </form>
+      <a href="/users/register">Não tem conta? Cadastre-se</a>
     </div>
   );
 }

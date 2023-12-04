@@ -16,10 +16,10 @@ h3{
 .recomendacao p{
     color: #00712D;
     background-color: #C8FED4;
-    width: 150px;
-    height: 250px;
+    width: 500px;
+    height: auto;
     border-radius: 20px;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .imagemlivro{
