@@ -9,7 +9,7 @@ export default function Test() {
   return (
     <div >
       <AnswerProvider>
-        <Questions/>
+        {/* <Questions/> */}
       </AnswerProvider>
       
     </div>

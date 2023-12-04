@@ -1,0 +1,73 @@
+.recomendacao{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 250px;
+    width: 500px;
+    background-color: #B0EDBD;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+h3{
+    color: #00712D;
+}
+.recomendacao p{
+    color: #00712D;
+    background-color: #C8FED4;
+    width: 150px;
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.imagemlivro{
+    width: auto;
+    height: 250px;
+    border-radius: 20px;
+}
+.dadosLivro{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.modal {
+  width: 400px;
+  height: 600px;
+   display:flex;
+   justify-content: center;
+   align-content: center;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid #00712D;
+    background-color: #00712D;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b0edbda6;
+  }
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+  
+  .ReactModal__Overlay--after-open{
+    opacity: 1;
+    
+  }
+  
+  .ReactModal__Overlay--before-close{
+    opacity: 0;
+  }
+  
