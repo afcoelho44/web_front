@@ -8,9 +8,8 @@ const api = axios.create({
 });
 
 // (-----------------Categorias-------------------)
-export const listarTodasCategorias = () => {
-  api.get(`/categorias`);
-};
+export const listarTodasCategorias = () => api.get(`/categorias`);
+
 
 // (-------------------Curtidos--------------------------)
 export const listarLivrosCurtidosPorUsuario = (idUsuario) =>
