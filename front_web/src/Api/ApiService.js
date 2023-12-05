@@ -61,3 +61,7 @@ export const listarTodasRespostas = () => api.get(`/api/respostas`);
 
 export const cadastrarUsuario = (usuario) =>
   api.post(`/usuarios/cadastrar`, usuario);
+
+
+export const autenticarUsuario = (usuario) =>
+  api.post(`/usuarios/autenticar`, usuario);

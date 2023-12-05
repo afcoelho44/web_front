@@ -10,27 +10,30 @@ import Test from "./Pages/Test";
 import Answer from "./Pages/Answer";
 import UsersRegister from './Pages/users/UsersRegister';
 import SavedBook from './Pages/books/SavedBooks';
+import { AuthProvider } from './Providers/AuthContext';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-    <Header />
-    <div className="routesApp">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/users/login" element={<Login />} />
-          <Route path="/users/register" element={<UsersRegister />} />
-          <Route path="/books" element={<IndexBooks />} />
-            <Route path="/books/add" element={<AddBook />} />
-            <Route path="/books/saved" element={<SavedBook />} />
-          <Route path="/test" element={<Test />} />
-          <Route path="/answer/:category" element={<Answer />} />
-        </Routes>
-      </BrowserRouter>
-      </div>
+      <AuthProvider>
+        <Header />
+        <div className="routesApp">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/users/login" element={<Login />} />
+              <Route path="/users/register" element={<UsersRegister />} />
+              <Route path="/books" element={<IndexBooks />} />
+                <Route path="/books/add" element={<AddBook />} />
+                <Route path="/books/saved" element={<SavedBook />} />
+              <Route path="/test" element={<Test />} />
+              <Route path="/answer/:category" element={<Answer />} />
+            </Routes>
+          </BrowserRouter>
+            </div>
+      </AuthProvider>
       </div>
   );
 }
