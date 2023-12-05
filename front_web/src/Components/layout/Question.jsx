@@ -10,7 +10,9 @@ const Question = (props)=> {
             <div className="pergunta">
             <p className="conteudoPergunta">{ props.pergunta.conteudoPergunta}</p>
             </div>
-            <Answers idPergunta={props.pergunta.idPergunta} addRespostasAtuais={ props.addRespostasAtuais} />
+            <Answers respostas={props.answerList}
+                idPergunta={props.pergunta.id}
+                addRespostasAtuais={props.addRespostasAtuais} />
        </Card> 
     );
 }

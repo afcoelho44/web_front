@@ -18,7 +18,8 @@ const Book = (props) => {
     }
 
     return (
-        <CardBook id={ props.livro.idLivro}>
+        
+        <CardBook id={props.livro.idLivro}>
             <div className="recomendacao" onClick={openModal}>
                 {/* <img src={imagem} className="imagemlivro"></img> */}
                 <div className="dadosLivro">
@@ -39,8 +40,7 @@ const Book = (props) => {
                 <h4>Categoria: {props.livro.categoria.nome}</h4>
                 <h4>Autor: {props.livro.autor}</h4>
                 <h4>N° de páginas: {props.livro.pagina}</h4>
-                <h4>Classificação: {props.livro.classificacao}</h4>
-                <h4>Ano de publicação: { props.livro.anoPublicação}</h4>
+                <h4>Ano de publicação: { props.livro.anoPublicacao}</h4>
                 <p>
                     <strong>Sumário</strong><br />
                     { props.livro.descricao}
