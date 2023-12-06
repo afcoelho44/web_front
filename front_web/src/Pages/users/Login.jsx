@@ -14,6 +14,14 @@ export default function Login() {
 
 
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+    recoverUser();
+    authenticateUser();
+    if(autenticar){
+      navigate("/");
+    }
+  }
   function recoverUser() {
     const User = {
       email: email,
@@ -26,21 +34,14 @@ export default function Login() {
       .then((resposnse) => {
         setUser(resposnse.data);
         setAutenticar(true);
-        console.log("Usuario autenticado: " + newUser);
+        console.log("Usuario autenticado: " + user);
       })
       .catch((erro) => {
         console.log(erro);
         setAutenticar(false);
       });
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    recoverUser();
-    authenticateUser();
-    if(autenticar){
-      navigate("/");
-    }
-  }
+  
   return (
     <div className="conteudoLogin">
       <h1>Login</h1>

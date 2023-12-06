@@ -6,6 +6,24 @@
     grid-gap:40px;
     margin: 0  3rem 0;
 }
+.containerBotoes{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.botaoLivros{
+         background-color: #82DA95;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 60px;
+        padding: 20px 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: none;
+        cursor: pointer;
+    
+}
 
 @media(max-width: 1000px){
     .container{

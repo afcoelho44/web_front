@@ -3,7 +3,10 @@ import { listarTodosLivros } from '../../Api/ApiService';
 import Book from '../../Components/layout/Book';
 import './IndexBooks.css';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthContext';
 export default function IndexBooks() {
+
+  const { user } = React.useContext(AuthContext);
 
   const navigate = useNavigate();
   const [livros, setLivros] = React.useState([]);
@@ -24,11 +27,11 @@ export default function IndexBooks() {
 
   return (
     <div>
-      <div>
-        <button onClick={()=>navigate("/books/saved")}>Livros Salvos</button>
-        <button>Editar Livro</button>
-        <button>Deletar Livro</button>
-        <button onClick={()=>navigate("/books/add")}>Adicionar Livro</button>
+      <div className='containerBotoes'>
+        {user.isAdmin && <button className="botaoLivros" onClick={() => navigate("/books/saved")}>Livros Salvos</button>}
+       {!user.isAdmin && <button className="botaoLivros">Editar Livro</button>}
+        {!user.isAdmin && <button className="botaoLivros">Excluir Livro</button>}
+        {!user.isAdmin && <button className="botaoLivros" onClick={()=>navigate("/books/add")}>Adicionar Livro</button>}
       </div>
     <div className='container'>
       {livros.map((livro) => {

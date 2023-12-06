@@ -60,14 +60,14 @@ export default function AddBook() {
 
   return (
 <div className="conteudoRegister">
-    <h1>Cadastro</h1>
-    <form onSubmit={handlerSubmit}>
+    <h1>Cadastro de livros</h1>
+    <form className="formularioLivro" onSubmit={handlerSubmit}>
         <label>
           titulo:
             <input type="text" name="titulo" onChange={(e)=>setTitulo(e.target.value)}/>
         </label>
         <label>
-          titulo:
+          Subtitulo:
             <input type="text" name="subtitulo" onChange={(e)=>setSubtitulo(e.target.value)}/>
         </label>
         <label>
@@ -75,7 +75,7 @@ export default function AddBook() {
             <input type="text" name="autor" onChange={(e)=>setAutor(e.target.value)} />
         </label>
         <label>
-          titulo:
+          Ano da Publicação:
             <input type="text" name="anoPublicacao" onChange={(e)=>setAnoPublicacao(e.target.value)}/>
         </label>
         <label>
